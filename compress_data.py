@@ -5,8 +5,8 @@ import csv
 
 
 ###Inputs###
-FILENAME_INPUT = "countUntilHeadAndThenCoin.csv"
-FILENAME_OUTPUT = "compressedCountUntilHeadAndThenCoin.csv"
+FILENAME_INPUT = "countUntilDoubleHeads.csv"
+FILENAME_OUTPUT = "compressedDoubleHeads.csv"
 ###Inputs###
 
 VALUES = {}

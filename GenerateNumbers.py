@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as mpl
 numberOfFlips = 1000
-number_of_tests = 1_000
+number_of_tests = 500
 PRINTCOUNTER = 0
 # Statestieken
 COUNTUNTILDOUBLEHEADS = []
@@ -28,8 +28,8 @@ def countUntilDoubleHeads(list_of_coinflips):
     for coin in list_of_coinflips:
         if counter > numberOfFlips:
             raise ValueError("The numer of flips need to be increesed")
-        elif(coin == last_coin_flipt and coin == 1):
-            return counter - 1
+        elif( last_coin_flipt == 1 and coin == 1):
+            return counter +1
         else:
             last_coin_flipt = coin
             counter +=1
@@ -39,8 +39,10 @@ def countUntilHeadAndThenCoin(list_of_coinflips):
     counter = 0
     last_coin_flipt = 99
     for coin in list_of_coinflips:
-        if (last_coin_flipt == 1 and coin == 0):
-            return counter - 1
+        if counter > numberOfFlips:
+            raise ValueError("The numer of flips need to be increesed")
+        elif (last_coin_flipt == 1 and coin == 0):
+            return counter +1
         else:
             last_coin_flipt = coin
             counter += 1
@@ -54,24 +56,25 @@ def generateCoinList(numberOfFlips):
         numberOfFlips -= 1
     return listOfCoinFlips
 
-i = 0
-while i < 1000000:
+# i = 0
+# while i < 1000000:
 
-    while number_of_tests > 0:
-        number_of_tests -= 1
+# while number_of_tests > 0:
+#     number_of_tests -= 1
 
-        coin_list = generateCoinList(numberOfFlips)
-        COUNTUNTILDOUBLEHEADS.append(countUntilDoubleHeads(coin_list))
-        COUNTUNTILHEADANDTHENCOIN.append(countUntilHeadAndThenCoin(coin_list))
-
-
-
-
-    save_list_of_numbers_to_file("countUntilDoubleHeads.csv", COUNTUNTILDOUBLEHEADS)
-    save_list_of_numbers_to_file("countUntilHeadAndThenCoin.csv", COUNTUNTILHEADANDTHENCOIN)
-    i +=1
+coin_list = generateCoinList(numberOfFlips)
+COUNTUNTILDOUBLEHEADS.append(countUntilDoubleHeads(coin_list))
+COUNTUNTILHEADANDTHENCOIN.append(countUntilHeadAndThenCoin(coin_list))
+print(coin_list)
+print(COUNTUNTILDOUBLEHEADS)
+print(COUNTUNTILHEADANDTHENCOIN)
 
 
+
+
+# save_list_of_numbers_to_file("countUntilDoubleHeads.csv", COUNTUNTILDOUBLEHEADS)
+# save_list_of_numbers_to_file("countUntilHeadAndThenCoin.csv", COUNTUNTILHEADANDTHENCOIN)
+# # i +=1
 
 
 
