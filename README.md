@@ -1,5 +1,5 @@
 Stappenplan reproducitie:
-Verwijder alle csv bestanden om de oude data te verwijderen. 
-run GenerateNumbers.py (hoe langer hoe meer data).
-run compress_data.py.
-gebruik de outputed csv file voor analyse in exel.
+1. Verwijder alle csv bestanden om de oude data te verwijderen. 
+2. run GenerateNumbers.py (hoe langer hoe meer data).
+3. run compress_data.py.
+4. gebruik de outputed csv file voor analyse in exel.
